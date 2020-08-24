@@ -1,0 +1,13 @@
+[Unit]
+Description=dj-third
+After=network.target
+[Service]
+Type=simple
+User=www
+Group=www
+WorkingDirectory=/home/wwwroot/third-php
+ExecStart=/www/server/php/72/bin/php easyswoole start
+ExecStop=/www/server/php/72/bin/php easyswoole stop
+Restart=on-failure
+[Install]
+WantedBy=multi-user.target
